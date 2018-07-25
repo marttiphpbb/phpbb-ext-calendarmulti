@@ -1,6 +1,6 @@
 services:
-    marttiphpbb.calendarmono.listener:
-        class: marttiphpbb\calendarmono\event\listener
+    marttiphpbb.calendarmulti.listener:
+        class: marttiphpbb\calendarmulti\event\listener
         arguments:
             - '@template'
             - '@language'
@@ -8,8 +8,8 @@ services:
         tags:
             - { name: event.listener }
 
-    marttiphpbb.calendarmono.core.event_container:
-        class: marttiphpbb\calendarmono\core\event_container
+    marttiphpbb.calendarmulti.core.event_container:
+        class: marttiphpbb\calendarmulti\core\event_container
         arguments:
             - '@auth'
             - '@config'
@@ -17,8 +17,8 @@ services:
             - '@dbal.conn'
             - '%tables.topics%'
 
-    marttiphpbb.calendarmono.dateformat:
-        class: marttiphpbb\calendarmono\util\dateformat
+    marttiphpbb.calendarmulti.dateformat:
+        class: marttiphpbb\calendarmulti\util\dateformat
         arguments:
             - '@user'
             - '@language'

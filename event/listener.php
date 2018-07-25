@@ -1,18 +1,18 @@
 <?php
 /**
-* phpBB Extension - marttiphpbb calendarmono
-* @copyright (c) 2014 - 2018 marttiphpbb <info@martti.be>
+* phpBB Extension - marttiphpbb calendarmulti
+* @copyright (c) 2018 marttiphpbb <info@martti.be>
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
 
-namespace marttiphpbb\calendarmono\event;
+namespace marttiphpbb\calendarmulti\event;
 
 use phpbb\template\template;
 use phpbb\language\language;
 use phpbb\config\config;
 use phpbb\event\data as event;
-use marttiphpbb\calendarmono\render\links;
-use marttiphpbb\calendarmono\util\cnst;
+use marttiphpbb\calendarmulti\render\links;
+use marttiphpbb\calendarmulti\util\cnst;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class listener implements EventSubscriberInterface
@@ -70,7 +70,7 @@ class listener implements EventSubscriberInterface
 		$lang_set_ext = $event['lang_set_ext'];
 		/*
 		$lang_set_ext[] = [
-			'ext_name' => 'marttiphpbb/calendarmono',
+			'ext_name' => 'marttiphpbb/calendarmulti',
 			'lang_set' => 'common',
 		];
 		*/

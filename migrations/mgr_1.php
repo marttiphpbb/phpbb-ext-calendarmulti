@@ -1,13 +1,13 @@
 <?php
 /**
-* phpBB Extension - marttiphpbb calendarmono
-* @copyright (c) 2014 - 2018 marttiphpbb <info@martti.be>
+* phpBB Extension - marttiphpbb calendarmulti
+* @copyright (c) 2018 marttiphpbb <info@martti.be>
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
 
-namespace marttiphpbb\calendarmono\migrations;
+namespace marttiphpbb\calendarmulti\migrations;
 
-use marttiphpbb\calendarmono\util\cnst;
+use marttiphpbb\calendarmulti\util\cnst;
 
 class mgr_1 extends \phpbb\db\migration\migration
 {
@@ -30,7 +30,7 @@ class mgr_1 extends \phpbb\db\migration\migration
 				'acp',
 				cnst::L_ACP,
 				[
-					'module_basename'	=> '\marttiphpbb\calendarmono\acp\main_module',
+					'module_basename'	=> '\marttiphpbb\calendarmulti\acp\main_module',
 					'modes'				=> [
 						'tag_rendering',
 					],

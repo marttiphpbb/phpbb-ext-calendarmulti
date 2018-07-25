@@ -1,21 +1,21 @@
 <?php
 
 /**
-* phpBB Extension - marttiphpbb calendarmono
-* @copyright (c) 2014 - 2018 marttiphpbb <info@martti.be>
+* phpBB Extension - marttiphpbb calendarmulti
+* @copyright (c) 2018 marttiphpbb <info@martti.be>
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
 
-namespace marttiphpbb\calendarmono\core;
+namespace marttiphpbb\calendarmulti\core;
 
-use marttiphpbb\calendarmono\core\timespan;
-use marttiphpbb\calendarmono\core\calendarmono_event;
+use marttiphpbb\calendarmulti\core\timespan;
+use marttiphpbb\calendarmulti\core\calendarmulti_event;
 
-class calendarmono_event_row
+class calendarmulti_event_row
 {
 	protected $timespan;
 	protected $free_timespans = [];
-	protected $calendarmono_events = [];
+	protected $calendarmulti_events = [];
 
 	public function __construct(
 		timespan $timespan
@@ -25,11 +25,11 @@ class calendarmono_event_row
 		$this->free_timespans = [$timespan];
 	}
 
-	public function insert_calendarmono_event(calendarmono_event $calendarmono_event)
+	public function insert_calendarmulti_event(calendarmulti_event $calendarmulti_event)
 	{
-		$timespan = $calendarmono_event->get_timespan();
+		$timespan = $calendarmulti_event->get_timespan();
 
-		foreach ($this->calendarmono_events as $ev)
+		foreach ($this->calendarmulti_events as $ev)
 		{
 			if ($ev->overlaps($timespan))
 			{
@@ -37,7 +37,7 @@ class calendarmono_event_row
 			}
 		}
 
-		$this->calendarmono_events[] = $calendarmono_event;
+		$this->calendarmulti_events[] = $calendarmulti_event;
 
 		return true;
 	}
