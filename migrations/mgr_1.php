@@ -25,13 +25,13 @@ class mgr_1 extends \phpbb\db\migration\migration
 				$this->table_prefix . cnst::TABLE => [
 					'COLUMNS'	=> [
 						'id'		=> ['UINT', NULL, 'auto_increment'],
-						'topic_id'	=> ['UINT', NULL],
-						'start_jd'	=> ['UINT', NULL],
-						'end_jd'	=> ['UINT', NULL],
+						'topic_id'	=> ['UINT', 0],
+						'start_jd'	=> ['UINT', 0],
+						'end_jd'	=> ['UINT', 0],
 					],
 					'PRIMARY_KEY' 	=> 'id',
 					'KEYS'		=> [
-						'cmutid'	=> ['INDEX', ['topic_id']],
+						'cmu_topic_id'	=> ['INDEX', ['topic_id']],
 					],
 				],
 			],
