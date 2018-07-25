@@ -5,11 +5,9 @@
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
 
-namespace marttiphpbb\calendarmulti\core;
+namespace marttiphpbb\calendarmulti\repository;
 
-use marttiphpbb\calendarmulti\core\timespan;
-
-class calendarmulti_event
+class events
 {
 	protected $id;
 	protected $timespan;

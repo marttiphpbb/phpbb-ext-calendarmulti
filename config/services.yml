@@ -1,24 +1,10 @@
 services:
-    marttiphpbb.calendarmulti.listener:
-        class: marttiphpbb\calendarmulti\event\listener
+    marttiphpbb.calendarmulti:
+        class: marttiphpbb\calendarmulti\repository\events
         arguments:
-            - '@template'
-            - '@language'
-            - '@config'
-        tags:
-            - { name: event.listener }
-
-    marttiphpbb.calendarmulti.core.event_container:
-        class: marttiphpbb\calendarmulti\core\event_container
-        arguments:
-            - '@auth'
-            - '@config'
-            - '@content.visibility'
             - '@dbal.conn'
-            - '%tables.topics%'
-
-    marttiphpbb.calendarmulti.dateformat:
-        class: marttiphpbb\calendarmulti\util\dateformat
-        arguments:
+            - '@content.visibility'
+            - '@auth'
             - '@user'
             - '@language'
+            - '%tables.topics'

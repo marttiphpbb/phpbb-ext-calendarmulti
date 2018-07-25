@@ -18,24 +18,32 @@ class mgr_1 extends \phpbb\db\migration\migration
 		];
 	}
 
-	public function update_data()
+	public function update_schema()
 	{
 		return [
-			['module.add', [
-				'acp',
-				'ACP_CAT_DOT_MODS',
-				cnst::L_ACP
-			]],
-			['module.add', [
-				'acp',
-				cnst::L_ACP,
-				[
-					'module_basename'	=> '\marttiphpbb\calendarmulti\acp\main_module',
-					'modes'				=> [
-						'tag_rendering',
+			'add_tables'    => [
+				$this->table_prefix . cnst::TABLE => [
+					'COLUMNS'	=> [
+						'id'		=> ['UINT', NULL, 'auto_increment'],
+						'topic_id'	=> ['UINT', NULL],
+						'start_jd'	=> ['UINT', NULL],
+						'end_jd'	=> ['UINT', NULL],
+					],
+					'PRIMARY_KEY' 	=> 'id',
+					'KEYS'		=> [
+						'cmutid'	=> ['INDEX', ['topic_id']],
 					],
 				],
-			]],
+			],
 		];
+	}
+
+	public function revert_schema()
+	{
+		return [
+			'drop_tables'			=> [
+				$this->table_prefix . cnst::TABLE,
+			],
+	   ];
 	}
 }

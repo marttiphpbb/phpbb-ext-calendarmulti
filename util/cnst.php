@@ -17,8 +17,7 @@ class cnst
 	const L_MCP = 'MCP_' . self::L;
 	const TPL = '@' . self::ID . '/';
 	const EXT_PATH = 'ext/' . self::FOLDER . '/';
-	const COLUMN_PREFIX = 'marttiphpbb_calendar_';
-	const COLUMN_START = self::COLUMN_PREFIX . 'start_jd';
-	const COLUMN_END = self::COLUMN_PREFIX . 'end_jd';
-	const TAG_IS_PREFIX = self::ID . '_tag_is_prefix';
+	const TABLE = self::ID;
+	const COLUMN_START = 'start_jd';
+	const COLUMN_END = 'end_jd';
 }
