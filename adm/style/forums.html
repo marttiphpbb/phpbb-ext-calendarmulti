@@ -1,0 +1,52 @@
+{%- extends '@marttiphpbb_calendarpoly/base.html' -%}
+
+{%- block heading -%}
+	{{- lang('ACP_MARTTIPHPBB_CALENDARPOLY_FORUMS') -}}
+{%- endblock heading -%}
+
+{%- block explain -%}
+	<p>
+		{{- lang('ACP_MARTTIPHPBB_CALENDARPOLY_FORUMS_EXPLAIN') -}}
+	</p>
+{%- endblock explain -%}
+
+{%- block form_content -%}
+	<fieldset>
+		<table class="table1 zebra-table">
+		<thead>
+		<tr>
+			<th>
+				{{- lang('FORUM') -}}
+			</th>
+			<th>
+				{{- lang('ACP_MARTTIPHPBB_CALENDARPOLY_FORUMS_ENABLED') -}}
+			</th>
+			<th>
+				{{- lang('ACP_MARTTIPHPBB_CALENDARPOLY_FORUMS_REQUIRED') -}}
+			</th>
+		</tr>
+		</thead>
+		<tbody>
+		{%- for cf in cforums -%}
+			<tr>
+				<td>
+					{{- cf.NAME -}}
+				</td>
+				<td>
+					<input class="radio" name="enabled[{{- cf.ID -}}]" value="1" type="checkbox"{%- if cf.ENABLED %} checked="checked"{%- endif %} data-enabled>
+				</td>
+				<td>
+					<input class="radio" name="required[{{- cf.ID -}}]" value="1" type="checkbox"{%- if cf.REQUIRED %} checked="checked"{%- endif %} data-required>
+				</td>
+			</tr>
+		{%- else -%}
+			<tr>
+				<td colspan="3" style="text-align: center;">{{- lang('NO_FORUMS') -}}</td>
+			</tr>
+		{%- endfor -%}
+		</tbody>
+		</table>
+
+	</fieldset>
+	{%- INCLUDEJS '@marttiphpbb_calendarpoly/js/forums.js' -%}
+{%- endblock form_content -%}

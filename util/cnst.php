@@ -12,6 +12,7 @@ class cnst
 	const FOLDER = 'marttiphpbb/calendarpoly';
 	const ID = 'marttiphpbb_calendarpoly';
 	const PREFIX = self::ID . '_';
+	const CACHE_ID = '_' . self::ID;
 	const L = 'MARTTIPHPBB_CALENDARPOLY';
 	const L_ACP = 'ACP_' . self::L;
 	const L_MCP = 'MCP_' . self::L;

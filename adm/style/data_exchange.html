@@ -1,0 +1,43 @@
+{%- extends '@marttiphpbb_calendarpoly/base.html' -%}
+
+{%- block heading -%}
+	{{- lang('ACP_MARTTIPHPBB_DATA_EXCHANGE') -}}
+{%- endblock heading -%}
+
+{%- block form_content -%}
+	<fieldset>
+		{%- embed '@marttiphpbb_calendarpoly/include/radio.html' with {'checked': S_PLACEMENT_BEFORE} only -%}
+			{%- block label -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARPOLY_PLACEMENT') -}}
+			{%- endblock -%}
+			{%- block explain -%}
+				<br>
+				{{- lang('ACP_MARTTIPHPBB_CALENDARPOLY_PLACEMENT_EXPLAIN') -}}
+			{%- endblock -%}
+			{%- block name -%}
+				placement_before
+			{%- endblock -%}
+			{%- block one -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARPOLY_BEFORE') -}}
+			{%- endblock -%}
+			{%- block zero -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARPOLY_AFTER') -}}
+			{%- endblock -%}
+		{%- endembed -%}
+
+		{%- embed '@marttiphpbb_calendarpoly/include/radio.html' with {'checked': FIRST_DAY} only -%}
+			{%- block label -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARPOLY_FIRST_DAY') -}}
+			{%- endblock -%}
+			{%- block name -%}
+				first_day
+			{%- endblock -%}
+			{%- block one -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARPOLY_MONDAY') -}}
+			{%- endblock -%}
+			{%- block zero -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARPOLY_SUNDAY') -}}
+			{%- endblock -%}
+		{%- endembed -%}
+	</fieldset>
+{%- endblock form_content -%}

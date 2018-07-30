@@ -1,0 +1,39 @@
+{%- extends '@marttiphpbb_calendarpoly/base.html' -%}
+
+{%- block heading -%}
+	{{- lang('ACP_MARTTIPHPBB_CALENDARPOLY_DATE_FORMAT') -}}
+{%- endblock heading -%}
+
+{%- block form_content -%}
+	<fieldset>
+		{%- embed '@marttiphpbb_calendarpoly/include/input.html' -%}
+			{%- block label -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARPOLY_DATE_FORMAT') -}}
+			{%- endblock -%}
+			{%- block explain -%}
+				<br>
+				{{- lang('ACP_MARTTIPHPBB_CALENDARPOLY_DATE_FORMAT_EXPLAIN') -}}
+			{%- endblock -%}
+			{%- block name -%}
+				date_format
+			{%- endblock -%}
+			{%- block value -%}
+				{{- DATE_FORMAT -}}
+			{%- endblock -%}
+		{%- endembed -%}
+
+		<p>
+			{{- lang('ACP_MARTTIPHPBB_CALENDARPOLY_DATE_FORMAT_CODES', '<a href="http://api.jqueryui.com/datepicker/#utility-formatDate">', '</a>') -}}
+		</p>
+
+		{%- embed '@marttiphpbb_calendarpoly/include/input.html' -%}
+			{%- block label -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARPOLY_DATE_FORMAT_SHOW') -}}
+			{%- endblock -%}
+			{%- block name -%}
+				date_format_show
+			{%- endblock -%}
+		{%- endembed -%}
+	</fieldset>
+	{%- INCLUDEJS '@marttiphpbb_calendarpoly/js/format.js' -%}
+{%- endblock form_content -%}

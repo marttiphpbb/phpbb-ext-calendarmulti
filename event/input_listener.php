@@ -25,12 +25,12 @@ class input_listener implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return [
-			'marttiphpbb.calendarmonoinput.tpl_vars'
-				=> 'marttiphpbb_calendarmonoinput_tpl_vars',
+			'marttiphpbb.calendarpoly.tpl_vars'
+				=> 'marttiphpbb_calendarpoly_tpl_vars',
 		];
 	}
 
-	public function marttiphpbb_calendarmonoinput_tpl_vars(event $event)
+	public function marttiphpbb_calendarpoly_tpl_vars(event $event)
 	{
 		$ext = $event['ext'];
 

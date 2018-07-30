@@ -9,6 +9,12 @@ services:
             - '%core.table_prefix%'
             - '%tables.topics%'
 
+    marttiphpbb.calendarpoly.store:
+        class: marttiphpbb\calendarpoly\service\store
+        arguments:
+            - '@config_text'
+            - '@cache.driver'
+
     marttiphpbb.calendarpoly.tag_listener:
         class: marttiphpbb\calendarpoly\event\tag_listener
         arguments:
