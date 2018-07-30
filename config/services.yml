@@ -6,7 +6,8 @@ services:
             - '@content.visibility'
             - '@auth'
             - '@user'
-            - '%tables.topics'
+            - '%core.table_prefix%'
+            - '%tables.topics%'
 
     marttiphpbb.calendarmulti.tag_listener:
         class: marttiphpbb\calendarmulti\event\tag_listener

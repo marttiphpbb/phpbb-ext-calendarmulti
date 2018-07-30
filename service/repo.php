@@ -25,6 +25,7 @@ class repo
 		content_visibility $content_visibility,
 		auth $auth,
 		user $user,
+		string $table_prefix,
 		string $topics_table
 	)
 	{
@@ -33,6 +34,17 @@ class repo
 		$this->auth = $auth;
 		$this->user = $user;
 		$this->topics_table = $topics_table;
+		$this->events_table = $table_prefix . cnst::TABLE;
+
+	}
+
+	public function get_current_events_for_topics(int $now_jd, array $topic_ids):array
+	{
+
+
+
+
+
 
 	}
 
@@ -41,7 +53,7 @@ class repo
 		$events = [];
 
 		$sql = 'select c.start_jd, c.end_jd
-			from ' . cnst::TABLE . ' c
+			from ' . $this->events_table . ' c
 			where c.topic_id = ' . $topic_id . '
 			order by c.start_jd';
 		$result = $this->db->sql_query($sql);

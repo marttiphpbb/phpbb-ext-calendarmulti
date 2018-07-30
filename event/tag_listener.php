@@ -40,6 +40,7 @@ class tag_listener implements EventSubscriberInterface
 		$topic_data = $event['topic_data'];
 		$start_jd = $event['start_jd'];
 		$end_jd = $event['end_jd'];
+		$now_jd = $event['now_jd'];
 
 		if ($start_jd || $end_jd)
 		{
