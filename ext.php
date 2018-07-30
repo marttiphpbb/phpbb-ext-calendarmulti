@@ -1,11 +1,11 @@
 <?php
 /**
-* phpBB Extension - marttiphpbb calendarmulti
+* phpBB Extension - marttiphpbb calendarpoly
 * @copyright (c) 2018 marttiphpbb <info@martti.be>
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
 
-namespace marttiphpbb\calendarmulti;
+namespace marttiphpbb\calendarpoly;
 
 class ext extends \phpbb\extension\base
 {

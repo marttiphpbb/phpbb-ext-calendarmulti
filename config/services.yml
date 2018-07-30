@@ -1,6 +1,6 @@
 services:
-    marttiphpbb.calendarmulti.repo:
-        class: marttiphpbb\calendarmulti\service\repo
+    marttiphpbb.calendarpoly.repo:
+        class: marttiphpbb\calendarpoly\service\repo
         arguments:
             - '@dbal.conn'
             - '@content.visibility'
@@ -9,16 +9,16 @@ services:
             - '%core.table_prefix%'
             - '%tables.topics%'
 
-    marttiphpbb.calendarmulti.tag_listener:
-        class: marttiphpbb\calendarmulti\event\tag_listener
+    marttiphpbb.calendarpoly.tag_listener:
+        class: marttiphpbb\calendarpoly\event\tag_listener
         arguments:
-            - '@marttiphpbb.calendarmulti.repo'
+            - '@marttiphpbb.calendarpoly.repo'
         tags:
             - { name: event.listener }
 
-    marttiphpbb.calendarmulti.input_listener:
-        class: marttiphpbb\calendarmulti\event\input_listener
+    marttiphpbb.calendarpoly.input_listener:
+        class: marttiphpbb\calendarpoly\event\input_listener
         arguments:
-            - '@marttiphpbb.calendarmulti.repo'
+            - '@marttiphpbb.calendarpoly.repo'
         tags:
             - { name: event.listener }

@@ -1,16 +1,16 @@
 <?php
 /**
-* phpBB Extension - marttiphpbb calendarmulti
+* phpBB Extension - marttiphpbb calendarpoly
 * @copyright (c) 2018 marttiphpbb <info@martti.be>
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
 
-namespace marttiphpbb\calendarmulti\event;
+namespace marttiphpbb\calendarpoly\event;
 
 use phpbb\event\data as event;
 
-use marttiphpbb\calendarmulti\service\repo;
-use marttiphpbb\calendarmulti\util\cnst;
+use marttiphpbb\calendarpoly\service\repo;
+use marttiphpbb\calendarpoly\util\cnst;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class input_listener implements EventSubscriberInterface

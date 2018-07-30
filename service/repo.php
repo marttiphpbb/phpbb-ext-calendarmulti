@@ -1,17 +1,17 @@
 <?php
 /**
-* phpBB Extension - marttiphpbb calendarmulti
+* phpBB Extension - marttiphpbb calendarpoly
 * @copyright (c) 2018 marttiphpbb <info@martti.be>
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
 
-namespace marttiphpbb\calendarmulti\service;
+namespace marttiphpbb\calendarpoly\service;
 
 use phpbb\db\driver\factory as db;
 use phpbb\content_visibility;
 use phpbb\auth\auth;
 use phpbb\user;
-use marttiphpbb\calendarmulti\util\cnst;
+use marttiphpbb\calendarpoly\util\cnst;
 
 class repo
 {
