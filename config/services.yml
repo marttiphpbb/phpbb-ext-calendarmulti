@@ -1,10 +1,23 @@
 services:
-    marttiphpbb.calendarmulti:
-        class: marttiphpbb\calendarmulti\repository\events
+    marttiphpbb.calendarmulti.repo:
+        class: marttiphpbb\calendarmulti\service\repo
         arguments:
             - '@dbal.conn'
             - '@content.visibility'
             - '@auth'
             - '@user'
-            - '@language'
             - '%tables.topics'
+
+    marttiphpbb.calendarmulti.tag_listener:
+        class: marttiphpbb\calendarmulti\event\tag_listener
+        arguments:
+            - '@marttiphpbb.calendarmulti.repo'
+        tags:
+            - { name: event.listener }
+
+    marttiphpbb.calendarmulti.input_listener:
+        class: marttiphpbb\calendarmulti\event\input_listener
+        arguments:
+            - '@marttiphpbb.calendarmulti.repo'
+        tags:
+            - { name: event.listener }
