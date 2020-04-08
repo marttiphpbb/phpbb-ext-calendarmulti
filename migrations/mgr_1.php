@@ -14,11 +14,11 @@ class mgr_1 extends \phpbb\db\migration\migration
 	static public function depends_on()
 	{
 		return [
-			'\phpbb\db\migration\data\v32x\v321',
+			'\phpbb\db\migration\data\v330\v330',
 		];
 	}
 
-	public function update_schema()
+	public function update_schema():array
 	{
 		return [
 			'add_tables'    => [
@@ -38,7 +38,7 @@ class mgr_1 extends \phpbb\db\migration\migration
 		];
 	}
 
-	public function revert_schema()
+	public function revert_schema():array
 	{
 		return [
 			'drop_tables'			=> [

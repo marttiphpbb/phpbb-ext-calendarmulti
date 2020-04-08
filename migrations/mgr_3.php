@@ -11,14 +11,14 @@ use marttiphpbb\calendarpoly\util\cnst;
 
 class mgr_3 extends \phpbb\db\migration\migration
 {
-	static public function depends_on()
+	static public function depends_on():array
 	{
 		return [
 			'\marttiphpbb\calendarpoly\migrations\mgr_2',
 		];
 	}
 
-	public function update_data()
+	public function update_data():array
 	{
 		return [
 			['module.add', [

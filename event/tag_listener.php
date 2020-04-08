@@ -21,14 +21,14 @@ class tag_listener implements EventSubscriberInterface
 		$this->repo = $repo;
 	}
 
-	static public function getSubscribedEvents()
+	static public function getSubscribedEvents():array
 	{
 		return [
 			'marttiphpbb.calendartag.data'	=> 'marttiphpbb_calendartag_data',
 		];
 	}
 
-	public function marttiphpbb_calendartag_data(event $event)
+	public function marttiphpbb_calendartag_data(event $event):void
 	{
 		$total = $event['total'];
 

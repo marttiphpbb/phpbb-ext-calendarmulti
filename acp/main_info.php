@@ -11,7 +11,7 @@ use marttiphpbb\calendarpoly\util\cnst;
 
 class main_info
 {
-	function module()
+	function module():array
 	{
 		return [
 			'filename'	=> '\marttiphpbb\calendarpoly\acp\main_module',

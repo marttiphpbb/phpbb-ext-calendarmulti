@@ -4,12 +4,12 @@
 
 ## Requirements
 
-* phpBB 3.2.1+
+* phpBB 3.3+
 * PHP 7.1+
 
 ## Quick Install
 
-You can install this on the latest release of phpBB 3.2 by following the steps below:
+You can install this on the latest release of phpBB by following the steps below:
 
 * Create `marttiphpbb/calendarpoly` in the `ext` directory.
 * Download and unpack the repository into `ext/marttiphpbb/calendarpoly`

@@ -35,7 +35,33 @@ class repo
 		$this->user = $user;
 		$this->topics_table = $topics_table;
 		$this->events_table = $table_prefix . cnst::TABLE;
+	}
 
+	public function get_all_for_period(int $start_jd, int $end_jd):array
+	{
+		$events = [];
+
+		$forum_ids = array_keys($this->auth->acl_getf('f_read', true));
+
+		$sql = 'select t.topic_id, t.forum_id, t.topic_reported, t.topic_title,
+			c.start_jd, c.end_jd
+			from ' . $this->topics_table . ' t, ' . $this->events_table . ' c
+			where t.topic_id = c.topic_id
+			 	and (c.start_jd <= ' . $end_jd . ' and c.end_jd >= ' . $start_jd . '
+				and ' . $this->db->sql_in_set('t.forum_id', $forum_ids, false, true) . '
+				and ' . $this->content_visibility->get_forums_visibility_sql('topic', $forum_ids, 't.') . '
+				and ' . $this->db_sql_in_set('t.topic_type', [POST_NORMAL, POST_STICKY]) . '
+			order by c.start_jd';
+		$result = $this->db->sql_query($sql);
+
+		while ($row = $this->db->sql_fetchrow($result))
+		{
+			$events[] = $row;
+		}
+
+		$this->db->sql_freeresult($result);
+
+		return $events;
 	}
 
 	public function get_current_events_for_topics(int $now_jd, array $topic_ids):array
